@@ -1,0 +1,223 @@
+@import url('animate.less');
+
+/* =======================================
+    main.css
+    use this file for your custom styles
+========================================== */
+
+/* set the default color, font-size, and line height */
+html {
+  color: #333;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* make images and embedded media fluid */
+img,
+object {
+  max-width: 100%;
+}
+
+.header_padding {
+    height: 50px;
+    width: 100%;
+    display: block;
+    background-color: #000;
+}
+
+/* =======================================
+    author styles
+    place your custom styles below here
+========================================== */
+body {
+  font-family: "Open Sans", sans-serif ;
+  font-size: 14px;
+  font-weight: lighter;
+//  padding-top: 50px;
+  background-color: #222;
+//    font-family: 'Open Sans', sans-serif;
+  //  font-family: 'Roboto', sans-serif;
+
+
+}
+
+
+.jumbotron {
+  background-color: transparent;
+}
+.jumbotron h1 {
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0 0 15px;
+    color: rgb(0,128,0);
+    // text-shadow: 4px 3px 0,9px 8px 0 rgba(0, 128, 0, 0.15);
+   text-shadow: 4px 3px 0 #fff, 9px 0px 0 rgba(0,0,0,0.15);
+  }
+
+  .jumbotron h3{
+    color: #fff;
+    font-size: 36px;
+  }
+.jumbotron > .btn-primary {
+  background-color: green;
+  color: #fff;
+  border: 2px solid green;
+  border-radius: 0;
+}
+.jumbotron .btn-primary:hover {
+  // border: 1px solid lighten(green, 5%);
+    background-color: #fff; //lighten(green, 5%);
+    color: green; // lighten(green, 5%); //#ccc;
+    border-radius: 0;
+    }
+  
+
+
+/* ==========================================
+    Introduction Section
+
+============================================= */
+.heading{
+  background-color: #fff;
+  height: 400px;
+  background-image: url('../img/linux.jpg');
+  background-size: cover;
+ .intro {
+    // background-color: #fff;
+    color: #fff;
+
+   }
+}
+
+
+
+.services {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background-color: #c5c5c5;
+}
+
+.services .marketing {
+  font-size: 15em;
+  color: #fff;
+  padding: 5px;
+}
+
+/* ==========================================
+    buttom Section
+
+============================================= */
+
+
+.footer-address {
+  padding-top: 10px;
+  font-size: 12px;
+  font-weight: lighter;
+  color: #ddd;
+}
+#footer-menu .breadcrumb{
+  background-color: #222;
+}
+#footer-menu .breadcrumb li {
+  font-size: 14px;
+  font-weight: lighter;
+  color: #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =======================================
+    helper classes
+    from HTML5 Boilerplate
+    https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+========================================== */
+
+ /*
+  * Hide visually and from screen readers:
+  */
+
+ .hidden {
+     display: none !important;
+ }
+
+ /*
+  * Hide only visually, but have it available for screen readers:
+  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+  */
+
+ .visuallyhidden {
+     border: 0;
+     clip: rect(0 0 0 0);
+     height: 1px;
+     margin: -1px;
+     overflow: hidden;
+     padding: 0;
+     position: absolute;
+     width: 1px;
+ }
+
+ /*
+  * Extends the .visuallyhidden class to allow the element
+  * to be focusable when navigated to via the keyboard:
+  * https://www.drupal.org/node/897638
+  */
+
+ .visuallyhidden.focusable:active,
+ .visuallyhidden.focusable:focus {
+     clip: auto;
+     height: auto;
+     margin: 0;
+     overflow: visible;
+     position: static;
+     width: auto;
+ }
+
+ /*
+  * Hide visually and from screen readers, but maintain layout
+  */
+
+ .invisible {
+     visibility: hidden;
+ }
+
+ /*
+  * Clearfix: contain floats
+  *
+  * For modern browsers
+  * 1. The space content is one way to avoid an Opera bug when the
+  *    `contenteditable` attribute is included anywhere else in the document.
+  *    Otherwise it causes space to appear at the top and bottom of elements
+  *    that receive the `clearfix` class.
+  * 2. The use of `table` rather than `block` is only necessary if using
+  *    `:before` to contain the top-margins of child elements.
+  */
+
+ .clearfix:before,
+ .clearfix:after {
+     content: " "; /* 1 */
+     display: table; /* 2 */
+ }
+
+ .clearfix:after {
+     clear: both;
+ }
