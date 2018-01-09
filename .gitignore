@@ -1,0 +1,6 @@
+node_modules
+img
+dist
+.DS_Store
+log
+index.sublime-workspace
