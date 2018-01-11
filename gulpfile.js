@@ -21,6 +21,7 @@ gulp.task('styles', function() {
     console.log('Running my styles Task');
     return gulp.src([stylespath])
         .pipe(sourcemaps.init())
+        .pipe(less())
         .pipe(minifyCss())
         .pipe(rename('main.min.css'))
         .pipe(sourcemaps.write('./maps'))
