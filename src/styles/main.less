@@ -18,11 +18,20 @@ object {
   max-width: 100%;
 }
 
+
+/* .navbar ul a {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  line-height: 50px;
+} */
+
+
 .header-padding {
     height: 50px;
     width: 100%;
     display: block;
     background-color: #000;
+   
 }
 
 /* =======================================
@@ -41,11 +50,22 @@ body {
 
 }
 
+/* ==========================================
+    Introduction Section
 
-.jumbotron {
-  background-color: transparent;
-
+============================================= */
+.heading{
+  background-color: #fff;
+  // height: 600px;
+  background-image: url('../img/linux.jpg');
+  background-size: cover;
+  .intro {
+     margin-top: 60px;
+     //height: 600px;
+  }
   h1 {
+    font-weight: 500;
+    font-size: 63px;
     letter-spacing: -2px;
     line-height: 1;
     margin: 0 0 15px;
@@ -60,32 +80,23 @@ body {
   }
 
   .btn-primary {
-    background-color: green;
-    color: #fff;
+    margin-top: 15px;
+    background-color: #fff;
+    color: green;
     border: 2px solid green;
     border-radius: 0;
 
     &:hover {
       // border: 1px solid lighten(green, 5%);
-        background-color: #fff; //lighten(green, 5%);
-        color: green; // lighten(green, 5%); //#ccc;
+     //   background-color: green; //lighten(green, 5%);
+        background: transparent;
+        color: #fff; // lighten(green, 5%); //#ccc;
+        border: 2px solid #fff;
         border-radius: 0;
         }
   }
 
 
-}
-
-
-/* ==========================================
-    Introduction Section
-
-============================================= */
-.heading{
-  background-color: #fff;
-  height: 400px;
-  background-image: url('../img/linux.jpg');
-  background-size: cover;
  .intro {
     // background-color: #fff;
     color: #fff;
@@ -98,13 +109,55 @@ body {
 .services {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
-  background-color: #c5c5c5;
+  background-color: #fff; // #c5c5c5;
+  .item{
+    margin: 0 0 20px 0;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 1.2em;
+    border-bottom: 8px solid #666;
+    padding-top: 5px;
+    &:hover {
+      background-color: rgba(211, 199, 199, 0.363);
+
+    }
+    i {
+      border-bottom: 2px solid white;
+      padding-bottom: 10px;
+    }
+    h4{
+      color: green;
+    }
+    p {
+      padding: 30px 35px;
+    }
+    
+  }
+  .learn {
+
+  }
+  .develop {
+    background-color:#C1E1A6; //#ecf6ff;
+    border-color: green;
+    i {
+      border-bottom: 2px solid green;
+      
+    }
+  }
+  .network {
+
+  }
 }
 
 .services .marketing {
-  font-size: 15em;
-  color: #fff;
+  // font-size: 15em;
+  color:#666;
   padding: 5px;
+}
+
+
+.product-feautures {
+  
 }
 
 /* ==========================================
