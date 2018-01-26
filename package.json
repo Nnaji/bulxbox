@@ -18,10 +18,10 @@
         "gulp-less": "^3.4.0",
         "gulp-minify-css": "^1.2.4",
         "gulp-rename": "^1.2.2",
-        "gulp-sourcemaps": "^2.6.3",
+        "gulp-sourcemaps": "^2.6.4",
         "gulp-uglify": "^3.0.0",
         "image-min": "^0.3.2",
-        "jquery": "^3.2.1"
+        "jquery": "^3.3.1"
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
