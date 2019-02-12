@@ -6,10 +6,10 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     less = require('gulp-less'),
-    shellJS = require('shelljs'),
+    shellJS = require('shelljs/global'),
     path = require('path'),
     fs = require('fs'),
-    clean = require('del'),
+    del = require('del'),
     uglify = require('gulp-uglify');
 
 
@@ -17,7 +17,7 @@ var scriptspath = 'src/scripts/**/*.js';
 var stylespath = 'src/styles/**/*.less';
 var distDirectory = path.join('dist', '/');
 
-gulp.task('styles', function() {
+function styles() {
     console.log('Running my styles Task');
     return gulp.src([stylespath])
         .pipe(sourcemaps.init())
@@ -27,14 +27,14 @@ gulp.task('styles', function() {
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('dist/styles/'))
         .pipe(browserSync.stream());
-});
+}
 
-gulp.task('scripts', function() {
+function scripts() {
     console.log('Running my scripts Task');
 
     if (!fs.existsSync(distDirectory)) {
 
-        shellJS.mkdir('dist');
+        mkdir('dist');
         console.log(`${ distDirectory } folder : created`);
     }
     return gulp.src([scriptspath])
@@ -44,27 +44,44 @@ gulp.task('scripts', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/scripts/'))
         .pipe(browserSync.stream());
-});
+}
 
-gulp.task('clean', function() {
-    clean('dist');
-});
+function clean(done) {
+    del('dist');
+    done();
+}
 
-gulp.task('imageMin', () => {
+function imageMin() {
     gulp.src('src/img/*')
         .pipe(imageMin())
         .pipe(gulp.dest('dist/img/'));
-});
+}
 
-gulp.task('default', ['scripts', 'styles', ], function() {
+function server() {
     console.log('Running my default Task');
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
-    gulp.watch(stylespath, ['styles']);
-    gulp.watch(scriptspath, ['scripts']);
-    gulp.watch(['src/**/*', '*.html', 'styles', 'scripts'], ['scripts', 'styles'], browserSync.reload);
 
-});
+}
+
+function watch() {
+    gulp.watch(stylespath, styles);
+    gulp.watch(scriptspath, scripts);
+    gulp.watch(['src/**/*', '*.html', 'styles', 'scripts'], scripts, styles, browserSync.reload);
+
+}
+
+var build = gulp.series(clean, gulp.parallel(styles, scripts, server, watch));
+
+gulp.task('build', build);
+
+gulp.task('default', build);
+
+exports.server = server;
+exports.clean = clean;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.watch = watch;
