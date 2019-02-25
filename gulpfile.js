@@ -1,21 +1,20 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
-    minifyCss = require('gulp-minify-css'),
+    minifyCss = require('gulp-clean-css'),
     sourcemaps = require('gulp-sourcemaps'),
     imageMin = require('gulp-imagemin'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     less = require('gulp-less'),
-    shellJS = require('shelljs/global'),
     path = require('path'),
     fs = require('fs'),
     del = require('del'),
     uglify = require('gulp-uglify');
 
 
-var scriptspath = 'src/scripts/**/*.js';
-var stylespath = 'src/styles/**/*.less';
-var distDirectory = path.join('dist', '/');
+const scriptspath = 'src/scripts/**/*.js';
+const stylespath = 'src/styles/**/*.less';
+const distDirectory = path.join('dist', '/');
 
 function styles() {
     console.log('Running my styles Task');
@@ -34,7 +33,7 @@ function scripts() {
 
     if (!fs.existsSync(distDirectory)) {
 
-        mkdir('dist');
+       fs.mkdirSync('dist');
         console.log(`${ distDirectory } folder : created`);
     }
     return gulp.src([scriptspath])
@@ -51,7 +50,7 @@ function clean(done) {
     done();
 }
 
-function imageMin() {
+function image() {
     gulp.src('src/img/*')
         .pipe(imageMin())
         .pipe(gulp.dest('dist/img/'));
