@@ -9,8 +9,9 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "browser-sync": "^2.26.7",
+        "browser-sync": "2.26.7",
         "del": "3.0.0",
+        "eslint": "6.2.2",
         "gulp": "4.0.0",
         "gulp-clean-css": "4.0.0",
         "gulp-concat": "2.6.1",
@@ -23,7 +24,7 @@
     "dependencies": {
         "bootstrap": "3.4.1",
         "font-awesome": "4.7.0",
-        "jquery": "^3.4.1",
+        "jquery": "3.4.1",
         "sshpk": "1.16.1"
     }
 }
