@@ -4,26 +4,28 @@
     "description": "LAMP Stack web development project",
     "main": "gulpfile.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+	"lint": "eslint --fixed ./src/scripts/js/**"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "bootstrap": "^3.4.1",
-        "browser-sync": "^2.26.3",
-        "del": "^3.0.0",
-        "gulp": "^4.0.0",
-        "gulp-clean-css": "^4.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-imagemin": "^5.0.3",
-        "gulp-less": "^4.0.1",
-        "gulp-rename": "^1.4.0",
-        "gulp-sourcemaps": "^2.6.5",
-        "gulp-uglify": "^3.0.1",
-        "jquery": "^3.3.1"
+        "browser-sync": "2.26.7",
+        "del": "3.0.0",
+        "eslint": "6.2.2",
+        "gulp": "4.0.0",
+        "gulp-clean-css": "4.0.0",
+        "gulp-concat": "2.6.1",
+        "gulp-imagemin": "5.0.3",
+        "gulp-less": "4.0.1",
+        "gulp-rename": "1.4.0",
+        "gulp-sourcemaps": "2.6.5",
+        "gulp-uglify": "3.0.1"
     },
     "dependencies": {
-        "font-awesome": "^4.7.0",
-        "sshpk": "^1.16.1"
+        "bootstrap": "3.4.1",
+        "font-awesome": "4.7.0",
+        "jquery": "3.4.1",
+        "sshpk": "1.16.1"
     }
 }
